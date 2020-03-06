@@ -234,3 +234,13 @@ it('Test dequeue - pop returns undefined if no element', function() {
   assert.equal(q.pop(), undefined);
   assert.equal(q.getLength(), 0)
 })
+
+it('Test dequeue - check is element is already in list', function () {
+  var q = new Dequeue(initSize);
+  var a1 = new Array();
+  var a2 = new Array();
+  q.push(a1)
+  assert.equal(q.contains(a1), true)
+  assert.equal(q.contains(a2), false)
+  assert.equal(q.contains({}), false)
+})
